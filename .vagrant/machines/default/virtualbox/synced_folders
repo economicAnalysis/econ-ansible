@@ -1,0 +1,1 @@
+{"virtualbox":{"/econ":{"guestpath":"/econ","hostpath":"/Users/azavadil/econdev","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/azavadil/Projects/econ/econ-ansible","disabled":false}}}

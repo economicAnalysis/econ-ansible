@@ -1,0 +1,6 @@
+- name: deploy latest version of database mongo
+  git: repo=git@github.com:azavadil/.git dest=/home/econ/econ-db accept_hostkey=True key_file=/home/econ/.ssh/econ_mongo_db_id_rsa version=dev
+  sudo: yes
+- name: build docker image as econ/econ-db-latest
+  command: docker build -t econ/econ-db-latest . chdir=/home/econ/econ-db
+  sudo: yes
