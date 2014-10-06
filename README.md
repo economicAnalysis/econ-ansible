@@ -68,3 +68,6 @@ docker run -d -P --name {{ ident }}_econapp -v /econ/econ-db:/src/
 Here we're mounting a directory from the host (i.e. Vagrant) in our container
 at the location `/src`. Remember that we mount the directory `/econdev` on our
 Max into Vagrant at `/econ` (this is in the Vagrantfile)
+
+######Cheat sheet
+`-d`: daemonize (i.e. run as background process)
