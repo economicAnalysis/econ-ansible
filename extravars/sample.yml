@@ -1,0 +1,7 @@
+---
+
+ident: sample
+port_db: 50001
+port_db_ssh: 50002
+port_db_mongo: 27017
+port_db_mongo_ssh: 50004

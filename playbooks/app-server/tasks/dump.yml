@@ -1,0 +1,8 @@
+- name: stop app server container
+  command: "docker stop {{ ident }}_server"
+  sudo: yes
+  ignore_errors: yes
+- name: remove app server container
+  command: "docker rm {{ ident }}_server"
+  sudo: yes
+  ignore_errors: yes

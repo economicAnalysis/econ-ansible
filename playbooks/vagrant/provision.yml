@@ -1,0 +1,23 @@
+
+-
+
+  hosts: local
+  tasks:
+    - name: add Docker repository key to local keychain
+      command: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+      sudo: yes
+    - name: Add the repository to your APT sources
+      command: sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+      sudo: yes
+    - name: update apt-get
+      command: apt-get update
+      sudo: yes
+    - name: install docker
+      command: apt-get install -y lxc-docker
+      sudo: yes
+    - name: add econ directory
+      command: mkdir /home/econ
+      sudo: yes
+    - name: add econ .ssh directory
+      command: mkdir /home/econ/.ssh
+      sudo: yes

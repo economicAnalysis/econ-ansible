@@ -1,6 +1,6 @@
-- name: deploy latest version of data warehouse node server
-  git: repo=git@github.com:economicAnalysis/economic-server.git dest=/home/economic/compgun-data-warehouse key_file=/home/compgun/.ssh/hr_gun_dw_id_rsa version=dev
+- name: deploy latest version of database node server
+  git: repo=git@github.com:economicAnalysis/economic-server.git dest=/home/econ/economic-server key_file=/home/econ/.ssh/econapp_id_rsa version=master
   sudo: yes
-- name: build docker image as compgun/gun-data-warehouse-latest
-  command: docker build -t compgun/gun-data-warehouse-latest . chdir=/home/compgun/compgun-data-warehouse
+- name: build docker image as econ/econapp-latest
+  command: docker build -t econ/econapp-latest . chdir=/home/econ/economic-server
   sudo: yes

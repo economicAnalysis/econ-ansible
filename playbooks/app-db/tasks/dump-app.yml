@@ -1,0 +1,9 @@
+
+- name: stop econapp node server container
+  command: "docker stop {{ ident }}_econapp"
+  sudo: yes
+  ignore_errors: yes
+- name: remove econapp node server container
+  command: "docker rm {{ ident }}_econapp"
+  sudo: yes
+  ignore_errors: yes

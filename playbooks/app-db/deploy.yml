@@ -1,0 +1,10 @@
+-
+
+  hosts: "{{ host }}"
+  tasks:
+    - include: tasks/deploy-build-db.yml
+    - include: tasks/dump-db.yml
+    - include: tasks/normalstart-db.yml
+    - include: tasks/deploy-build-app.yml
+    - include: tasks/dump-app.yml
+    - include: tasks/normalstart-app.yml
