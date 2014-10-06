@@ -46,3 +46,25 @@ In this case we run
 so the link is `sample_db_mongo:db`. The name is `sample_db_mongo` and the 
 alias is `db`. `db` is then available in our newly created container 
 `sample_econapp`.
+
+######Quickstart explained
+
+Data volumes are using the `-v` flag. For example 
+
+```
+sudo docker run -d -P --name web -v /webapp training/webapp python app.py
+```
+
+this will create a data volume inside the container at `/webapp`.
+
+In our case we want to mount a host directory inside the container. 
+
+The data volume code in the quickstart-app.yml
+
+```
+docker run -d -P --name {{ ident }}_econapp -v /econ/econ-db:/src/
+```
+
+Here we're mounting a directory from the host (i.e. Vagrant) in our container
+at the location `/src`. Remember that we mount the directory `/econdev` on our
+Max into Vagrant at `/econ` (this is in the Vagrantfile)
