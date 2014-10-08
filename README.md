@@ -60,9 +60,9 @@ In this case we run
 "docker run -d --name {{ ident }}_econapp --link {{ ident }}_db_mongo:db -p {{ port_db }}:5000 -p {{ port_db_ssh }}:22 econ/econapp-latest"
 ```
 so the link is `sample_db_mongo:db`. The name is `sample_db_mongo` and the 
-alias is `db`. `name` is the name of the container we're linking too.
+alias is `db` , `name` is the name of the container we're linking too.
 When we run `sudo docker ps` we see `sample_db_mongo, sample_econapp/mongodb`. This
-tells us that the `_db_mongodb` container is linked to the `sample_econapp` container in 
+tells us that the `sample_db_mongodb` container is linked to the `sample_econapp` container in 
 a `parent/child` relationship.
 
 
@@ -87,6 +87,13 @@ docker run -d -P --name {{ ident }}_econapp -v /econ/econ-db:/src/
 Here we're mounting a directory from the host (i.e. Vagrant) in our container
 at the location `/src`. Remember that we mount the directory `/econdev` on our
 Max into Vagrant at `/econ` (this is in the Vagrantfile)
+
+######Docker vs. Chef
+Docker starts where Chef ends. The promise of Chef was that we'd be able to 
+write cookbooks that could be shared and run anywhere. In reality, Chef cookbooks
+often only work on a specific operating system configured in a certain way. 
+Docker solves this problem. Docker starts from a consistent start point `FROM`
+(i.e. the image). By starting from a consistent image you get reproducible results. 
 
 ######Cheat sheet
 `-d`: daemonize (i.e. run as background process)

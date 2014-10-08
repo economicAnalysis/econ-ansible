@@ -5,6 +5,6 @@
     - include: tasks/deploy-build-db.yml
     - include: tasks/dump-db.yml
     - include: tasks/normalstart-db.yml
-    - include: tasks/deploy-build.yml
-    - include: tasks/dump.yml
-    - include: tasks/normalstart.yml
+    - include: tasks/deploy-build-app.yml
+    - include: tasks/dump-app.yml
+    

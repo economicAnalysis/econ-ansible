@@ -1,0 +1,8 @@
+- name: stop mongo database container
+  command: "docker stop {{ ident }}_db_mongo"
+  sudo: yes
+  ignore_errors: yes
+- name: remove mongo database container
+  command: "docker rm {{ ident }}_db_mongo"
+  sudo: yes
+  ignore_errors: yes
