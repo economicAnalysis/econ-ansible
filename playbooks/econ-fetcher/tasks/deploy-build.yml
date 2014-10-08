@@ -1,7 +1,6 @@
-
-- name: deploy latest version of app server
-  git: repo=git@github.com:economicAnalysis/economic-server.git accept_hostkey=True dest=/home/econ/economic-server key_file=/home/econ/.ssh/econ_server_id_rsa
+- name: deploy latest version of data fetcher
+  git: repo=git@github.com:economicAnalysis/econ-fetcher.git dest=/home/econ/econ-fetcher key_file=/home/econ/.ssh/fetcher_git_rsa version=master
   sudo: yes
-- name: build docker image as econ/econ-server-latest
-  command: docker build -t econ/econ-server-latest . chdir=/home/econ/economic-server
+- name: build docker image as econ/econ-fetcher-latest
+  command: docker build -t econ/econ-fetcher-latest . chdir=/home/econ/econ-fetcher
   sudo: yes
