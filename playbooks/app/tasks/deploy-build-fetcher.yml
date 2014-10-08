@@ -1,0 +1,6 @@
+- name: deploy latest version of data fetcher
+  git: repo=git@github.com:economicAnalysis/econ-fetcher.git dest=/home/econ/econ-fetcher key_file=/home/econ/.ssh/econ_fetcher_id_rsa version=master
+  sudo: yes
+- name: build docker image as econ/econ-fetcher-latest
+  command: docker build -t econ/econ-fetcher-latest . chdir=/home/econ/econ-fetcher
+  sudo: yes

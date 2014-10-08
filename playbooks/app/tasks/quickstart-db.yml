@@ -1,0 +1,3 @@
+- name: run new data mongo database container and mount local code
+  command: "docker run --name {{ ident }}_db_mongo -d -v /econ/econ-db:/src/ -v /econ/mongodata:/data/db -p {{ port_db_mongo }}:27017 -p {{ port_db_mongo_ssh }}:22 econ/econ-db-latest"
+  sudo: yes

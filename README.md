@@ -4,6 +4,22 @@
 The name of the application is econapp-latest. The application is composed
 of two Docker containers. 
 
+######Names
+econ-fetcher-latest
+sample_econ_fetcher
+
+econapp-latest
+sample_econapp
+
+######ssh into the webapp container
+```
+ssh root@localhost -p 50002 -i econapp_docker_rsa
+```
+we've set the container up with an ssh key and we've also forwarded the container
+port `22` to the high port `50002` on the host (Vagrant). Furthermore, on Vagrant
+we've forward the port `50002` to the `50002` on our Mac, so we can directly
+ssh into the container.
+
 ####Docker network ports
 ######Defaults
 By default if you include the `-P` flag docker will map ports on the Docker
@@ -44,8 +60,11 @@ In this case we run
 "docker run -d --name {{ ident }}_econapp --link {{ ident }}_db_mongo:db -p {{ port_db }}:5000 -p {{ port_db_ssh }}:22 econ/econapp-latest"
 ```
 so the link is `sample_db_mongo:db`. The name is `sample_db_mongo` and the 
-alias is `db`. `db` is then available in our newly created container 
-`sample_econapp`.
+alias is `db`. `name` is the name of the container we're linking too.
+When we run `sudo docker ps` we see `sample_db_mongo, sample_econapp/mongodb`. This
+tells us that the `_db_mongodb` container is linked to the `sample_econapp` container in 
+a `parent/child` relationship.
+
 
 ######Quickstart explained
 

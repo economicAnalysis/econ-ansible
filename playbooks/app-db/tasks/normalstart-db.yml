@@ -1,3 +1,0 @@
-- name: normal start new mongo database container
-  command: "docker run -d --name {{ ident }}_db_mongo -p {{ port_db_mongo }}:27017 -p {{ port_db_mongo_ssh }}:22 econ/econ-db-latest"
-  sudo: yes

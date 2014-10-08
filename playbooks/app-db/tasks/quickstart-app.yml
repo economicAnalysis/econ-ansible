@@ -1,3 +1,0 @@
-- name: run new database server container and mount local code
-  command: "docker run -d -P --name {{ ident }}_econapp -v /econ/econ-server:/src/ --link {{ ident }}_db_mongo:db -p {{ port_db }}:5000 -p {{ port_db_ssh }}:22 econ/econapp-latest"
-  sudo: yes

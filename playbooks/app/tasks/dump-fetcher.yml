@@ -1,0 +1,8 @@
+- name: stop econ fetcher container
+  command: "docker stop {{ ident }}_econ_fetcher"
+  sudo: yes
+  ignore_errors: yes
+- name: remove econ fetcher container
+  command: "docker rm {{ ident }}_econ_fetcher"
+  sudo: yes
+  ignore_errors: yes
