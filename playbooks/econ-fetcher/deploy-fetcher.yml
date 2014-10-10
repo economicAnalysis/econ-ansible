@@ -1,0 +1,7 @@
+-
+
+  hosts: "{{ host }}"
+  tasks:
+    - include: tasks/deploy-build-fetcher.yml
+    - include: tasks/dump-fetcher.yml
+    - include: tasks/normalstart-fetcher.yml

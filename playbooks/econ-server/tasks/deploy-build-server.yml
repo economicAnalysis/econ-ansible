@@ -1,0 +1,6 @@
+- name: deploy latest version of database node server
+  git: repo=git@github.com:economicAnalysis/econ-server.git dest=/home/econ/econ-server key_file=/home/econ/.ssh/econapp_id_rsa version=master
+  sudo: yes
+- name: build docker image as econ/econapp-latest
+  command: docker build -t econ/econapp-latest . chdir=/home/econ/econ-server
+  sudo: yes

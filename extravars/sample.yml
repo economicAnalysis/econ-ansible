@@ -7,3 +7,5 @@ port_db_mongo: 27017
 port_db_mongo_ssh: 50004
 port_fetcher: 50005
 port_fetcher_ssh: 50006
+port_client: 50007
+port_client_ssh: 50008

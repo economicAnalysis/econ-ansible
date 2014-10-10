@@ -1,0 +1,3 @@
+- name: normal start new econ client container
+  command: "docker run -d --name {{ ident }}_econ_client -p {{ port_client }}:9000 -p {{ port_client_ssh }}:22 econ/econ-fetcher-latest"
+  sudo: yes

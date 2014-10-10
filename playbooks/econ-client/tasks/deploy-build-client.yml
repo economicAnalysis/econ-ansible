@@ -1,0 +1,6 @@
+- name: deploy latest version of econ client
+  git: repo=git@github.com:economicAnalysis/econ-client.git dest=/home/econ/econ-client key_file=/home/econ/.ssh/client_git_rsa version=master
+  sudo: yes
+- name: build docker image as econ/econ-client-latest
+  command: docker build -t econ/econ-client-latest . chdir=/home/econ/econ-client
+  sudo: yes

@@ -1,0 +1,7 @@
+-
+
+  hosts: "{{ host }}"
+  tasks:
+    - include: tasks/deploy-build-server.yml
+    - include: tasks/dump-server.yml
+    - include: tasks/normalstart-server.yml

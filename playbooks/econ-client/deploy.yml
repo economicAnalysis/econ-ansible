@@ -1,0 +1,6 @@
+-
+  hosts: "{{ host }}"
+  tasks:
+    - include: tasks/deploy-build-client.yml
+    - include: tasks/dump-client.yml
+    - include: tasks/normalstart-client.yml

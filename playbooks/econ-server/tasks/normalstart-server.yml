@@ -1,0 +1,3 @@
+- name: normal start new econapp node server container
+  command: "docker run -d --name {{ ident }}_econapp --link {{ ident }}_db_mongo:mongodb -p {{ port_db }}:5000 -p {{ port_db_ssh }}:22 econ/econapp-latest"
+  sudo: yes
